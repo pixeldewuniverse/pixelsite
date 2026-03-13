@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { CartProvider } from '@/context/CartContext';
 
 export const metadata: Metadata = {
   title: 'PixelDew Studio',
@@ -10,9 +9,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>
-        <CartProvider>{children}</CartProvider>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

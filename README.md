@@ -1,30 +1,28 @@
-# PixelDew Landing Page
+# PixelDew Landing + Stripe Checkout
 
-Modern SaaS-style landing page for PixelDew digital studio built with Next.js 14, Tailwind CSS, TypeScript, Framer Motion, and Midtrans checkout API.
+Modern SaaS landing page for PixelDew built with Next.js 14 App Router, TypeScript, Tailwind CSS, Framer Motion, and Stripe Checkout.
 
-## Features
-- Pixel/retro-futuristic hero with floating particles and Dewbit mascot
-- Pricing/package cards with add-to-cart
-- Cart + checkout flow
-- Midtrans Snap transaction API route (`/api/create-transaction`)
-- Success page for post-payment status
-- Simple orders dashboard (`/dashboard/orders`)
+## Pages
+- `/` landing page with hero + pricing preview
+- `/pricing` package purchase page
+- `/checkout` starter page leading users to pricing
+- `/success` Stripe payment confirmation page
+- `/api/stripe/create-checkout` API route for Stripe Checkout session creation
 
 ## Environment Variables
 Copy `.env.example` to `.env.local` and fill values:
 
 ```bash
-MIDTRANS_SERVER_KEY=
-MIDTRANS_CLIENT_KEY=
-MIDTRANS_IS_PRODUCTION=false
-NEXT_PUBLIC_MIDTRANS_CLIENT_KEY=
+STRIPE_SECRET_KEY=
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=
+NEXT_PUBLIC_BASE_URL=http://localhost:3000
 ```
 
-## Run Locally
+## Local Development
 ```bash
 npm install
 npm run dev
 ```
 
-## Deploy
-Ready to deploy on Vercel.
+## Deployment
+Ready for Vercel serverless deployment.
