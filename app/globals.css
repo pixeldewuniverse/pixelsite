@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Press+Start+2P&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-pixelBg text-white font-body;
+  background-image: radial-gradient(circle at top right, rgba(50, 213, 255, 0.16), transparent 45%),
+    radial-gradient(circle at bottom left, rgba(159, 123, 255, 0.16), transparent 40%);
+}
+
+.pixel-glass {
+  @apply border border-white/10 bg-white/5 backdrop-blur-md;
+}
+
+.pixel-btn {
+  @apply relative overflow-hidden rounded-md border border-neonBlue/70 px-5 py-3 font-semibold text-white transition-all duration-300;
+}
+
+.pixel-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(50, 213, 255, 0.25), rgba(159, 123, 255, 0.35));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.pixel-btn:hover::before {
+  opacity: 1;
+}
+
+.pixel-btn > span {
+  @apply relative z-10;
+}
